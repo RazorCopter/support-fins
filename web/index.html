@@ -99,8 +99,8 @@
            type="number" id="vy" min="20" max="2000" step="1" aria-label="depth">×<input
            type="number" id="vz" min="20" max="2000" step="1" aria-label="height">mm
   </span>
-  <label class="field more" data-i18n-title title="Surface angle from the plate below which a face needs support.">
-    <span data-i18n="Overhang">Overhang</span>
+  <label class="field more" data-i18n-title="Surface angle from the plate below which a face needs support. Related calibration: 'Angle' coupon (Calibrate ▾ menu)." title="Surface angle from the plate below which a face needs support. Related calibration: 'Angle' coupon (Calibrate ▾ menu).">
+    <span class="calib-highlight"><span data-i18n="Overhang">Overhang</span> <span class="calib-tag" data-i18n="[Calibra: Angolo]">[Calibra: Angolo]</span></span>
     <input type="range" id="thr" min="30" max="70" step="1" value="45">
     <output id="thr-val">45°</output>
   </label>
@@ -302,8 +302,8 @@
       <span><span data-i18n="Layer height">Layer height</span> <span class="mut">mm</span></span>
       <input type="number" id="layer-height" min="0.08" max="0.6" step="0.04" value="0.2">
     </label>
-    <label data-i18n-title class="fld row" data-tip-pic="gap" title="Clearance between a support top and the part. Bigger = cleaner surface / easier removal; too big stops holding the overhang. Default 0.2mm.">
-      <span><span data-i18n="Support gap">Support gap</span> <span class="mut">mm</span></span>
+    <label data-i18n-title="Clearance between a support top and the part. Related calibration: 'Gap' coupon (Calibrate ▾ menu). Bigger = cleaner surface / easier removal; too big stops holding the overhang. Default 0.2mm." class="fld row" data-tip-pic="gap" title="Clearance between a support top and the part. Related calibration: 'Gap' coupon (Calibrate ▾ menu). Bigger = cleaner surface / easier removal; too big stops holding the overhang. Default 0.2mm.">
+      <span><span class="calib-highlight"><span data-i18n="Support gap">Support gap</span> <span class="calib-tag" data-i18n="[Calibra: Luce]">[Calibra: Luce]</span></span> <span class="mut">mm</span></span>
       <input type="number" id="gap" min="0.1" max="0.4" step="0.05" value="0.2">
     </label>
     <!-- Interface material (GitHub #21, prop/crest.js): for a toolchanger. The top
@@ -368,8 +368,9 @@
     <!-- no data-i18n-title: syncTineGrip (ui/settings.js) owns and translates this
          title, which swaps for the pins' one in resin mode -->
     <label data-tip-pic="tine-density" class="fld" id="tinegrip-fld"
-           title="How tightly to space the grip tines. Light = fewest marks (default), a per-wall floor keeps grip; Firm = dense comb / max grip for a tippy or tall part.">
-      <span class="grip-tines"><span data-i18n="Tine grip">Tine grip</span> <span class="mut"><span data-i18n="light">light</span> ⟶ <span data-i18n="firm">firm</span></span></span>
+           data-i18n-title="How tightly to space the grip tines. Related calibration: 'Grip' coupon (Calibrate ▾ menu). Light = fewest marks (default), a per-wall floor keeps grip; Firm = dense comb / max grip for a tippy or tall part."
+           title="How tightly to space the grip tines. Related calibration: 'Grip' coupon (Calibrate ▾ menu). Light = fewest marks (default), a per-wall floor keeps grip; Firm = dense comb / max grip for a tippy or tall part.">
+      <span class="grip-tines"><span class="calib-highlight"><span data-i18n="Tine grip">Tine grip</span> <span class="calib-tag" data-i18n="[Calibra: Presa]">[Calibra: Presa]</span></span> <span class="mut"><span data-i18n="light">light</span> ⟶ <span data-i18n="firm">firm</span></span></span>
       <!-- Vertical (resin) pins: the same slider only spaces the pins (prop/pins.js
            takes the comb's step); more pins, not deeper ones, hold harder (#309). -->
       <span class="grip-pins" hidden><span data-i18n="Pins per wall">Pins per wall</span> <span class="mut"><span data-i18n="fewer">fewer</span> ⟶ <span data-i18n="more">more</span></span></span>
@@ -402,8 +403,8 @@
          save filament. Every hole has a pointed roof (>=45deg) so nothing bridges;
          the contact top, foot and ends stay solid, and a wall too short for a hole
          stays solid. Tined side fins are not cut -- their tines anchor all over. -->
-    <label data-tip-pic="cutout" data-i18n-title class="fld row" title="Cut holes through tall breakaway walls to save filament. The top edge that holds the part, the foot, and the wall's ends stay solid, and every hole has a pointed roof so it prints without bridging. Short walls stay solid.">
-      <span data-i18n="Cutouts">Cutouts</span><select id="cutout">
+    <label data-tip-pic="cutout" data-i18n-title="Cut holes through tall breakaway walls to save filament. Related calibration: 'Cutouts' coupon (Calibrate ▾ menu). The top edge that holds the part, the foot, and the wall's ends stay solid, and every hole has a pointed roof so it prints without bridging. Short walls stay solid." class="fld row" title="Cut holes through tall breakaway walls to save filament. Related calibration: 'Cutouts' coupon (Calibrate ▾ menu). The top edge that holds the part, the foot, and the wall's ends stay solid, and every hole has a pointed roof so it prints without bridging. Short walls stay solid.">
+      <span class="calib-highlight"><span data-i18n="Cutouts">Cutouts</span> <span class="calib-tag" data-i18n="[Calibra: Alleggerimenti]">[Calibra: Alleggerimenti]</span></span><select id="cutout">
         <option value="none" data-i18n="None">None</option>
         <option value="diamond" data-i18n="Diamond">Diamond</option>
         <option value="triangle" data-i18n="Triangle">Triangle</option>
@@ -467,8 +468,8 @@
         <span data-i18n="Rounded feet">Rounded feet</span><input type="checkbox" id="rounded-feet">
       </label>
 
-      <label data-tip-pic="bed-pad" data-i18n-title class="fld row" title="A tilted part rests on an edge and peels off the plate without a pad. Auto: Light, or Sure hold when the part meets the plate on a point or a small round foot (it shows which). Light: one layer, 0.12mm off the part, peels off like a brim. Sure hold: thicker and tacked into the part, holds harder but is harder to remove. Custom: set every number yourself.">
-        <span data-i18n="Bed pad">Bed pad</span><select id="bed-pad">
+      <label data-tip-pic="bed-pad" data-i18n-title="A tilted part rests on an edge and peels off the plate without a pad. Related calibration: 'Pad' coupon (Calibrate ▾ menu). Auto: Light, or Sure hold when the part meets the plate on a point or a small round foot (it shows which). Light: one layer, 0.12mm off the part, peels off like a brim. Sure hold: thicker and tacked into the part, holds harder but is harder to remove. Custom: set every number yourself." class="fld row" title="A tilted part rests on an edge and peels off the plate without a pad. Related calibration: 'Pad' coupon (Calibrate ▾ menu). Auto: Light, or Sure hold when the part meets the plate on a point or a small round foot (it shows which). Light: one layer, 0.12mm off the part, peels off like a brim. Sure hold: thicker and tacked into the part, holds harder but is harder to remove. Custom: set every number yourself.">
+        <span class="calib-highlight"><span data-i18n="Bed pad">Bed pad</span> <span class="calib-tag" data-i18n="[Calibra: Pad]">[Calibra: Pad]</span></span><select id="bed-pad">
           <option value="off" data-i18n="Off">Off</option>
           <option value="auto" selected data-i18n="Auto">Auto</option>
           <option value="light" data-i18n="Light">Light</option>
@@ -480,8 +481,8 @@
         <span><span data-i18n="Pad thickness">Pad thickness</span> <span class="mut">mm</span></span>
         <input type="number" id="pad-h" min="0.1" max="1.0" step="0.05" value="0.2">
       </label>
-      <label data-tip-pic="pad-gap" class="fld row" data-pad-custom hidden data-i18n-title title="Sideways clearance between the pad and the part's first layer. 0.12mm lets first-layer squish just close it, the way a slicer brim holds; bigger comes off easier and holds less. Under 0.1mm most slicers merge the gap and the pad welds on. 0 = no gap (Pad grip decides).">
-        <span><span data-i18n="Pad gap">Pad gap</span> <span class="mut">mm</span></span>
+      <label data-tip-pic="pad-gap" class="fld row" data-pad-custom hidden data-i18n-title="Sideways clearance between the pad and the part's first layer. Related calibration: 'Pad' coupon (Calibrate ▾ menu). 0.12mm lets first-layer squish just close it, the way a slicer brim holds; bigger comes off easier and holds less. Under 0.1mm most slicers merge the gap and the pad welds on. 0 = no gap (Pad grip decides)." title="Sideways clearance between the pad and the part's first layer. Related calibration: 'Pad' coupon (Calibrate ▾ menu). 0.12mm lets first-layer squish just close it, the way a slicer brim holds; bigger comes off easier and holds less. Under 0.1mm most slicers merge the gap and the pad welds on. 0 = no gap (Pad grip decides).">
+        <span><span class="calib-highlight"><span data-i18n="Pad gap">Pad gap</span> <span class="calib-tag" data-i18n="[Calibra: Pad]">[Calibra: Pad]</span></span> <span class="mut">mm</span></span>
         <input type="number" id="pad-gap" min="0" max="0.5" step="0.01" value="0.12">
       </label>
       <label data-tip-pic="pad-grip" data-i18n-title class="fld row" data-pad-custom hidden title="Where the pad meets the part's underside. Positive bites in to hold harder; 0 is flush; negative leaves a gap that snaps off cleaner.">

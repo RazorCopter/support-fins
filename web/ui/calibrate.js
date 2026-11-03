@@ -149,6 +149,17 @@ function openGuide(e) {
 
 el('calibrate-guide')?.addEventListener('click', openGuide);
 el('calibrate-open-guide')?.addEventListener('click', openGuide);
+
+// Clicking a [Calibra: ...] tag in the settings panel opens the calibration guide directly
+document.addEventListener('click', (e) => {
+  const tag = e.target.closest('.calib-tag');
+  if (tag) {
+    e.preventDefault();
+    e.stopPropagation();
+    openGuideModal();
+  }
+});
+
 render();
 
 btn.addEventListener('click', () => setOpen(panel.hidden));

@@ -562,6 +562,42 @@ body.no-part #viewport canvas { pointer-events: none; }
   color: #06121f; font-weight: 600; }
 #fin-opts .mode-seg .btn:focus-visible { position: relative; z-index: 1; }   /* ring over the neighbour */
 #fin-opts .mode-note { margin: 0; font-size: 11px; line-height: 1.35; color: var(--dim); }
+
+/* Calibration-linked setting highlights */
+.calib-highlight {
+  color: #ff6b6b !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.calib-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  color: #ff8585;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+.calib-tag:hover {
+  background: rgba(239, 68, 68, 0.32);
+  border-color: #ef4444;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+#topbar .calib-highlight {
+  color: #ff6b6b !important;
+}
+
 #fin-opts .fld.row {
   flex-direction: row;
   align-items: center;
