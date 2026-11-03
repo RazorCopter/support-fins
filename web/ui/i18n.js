@@ -178,4 +178,14 @@ export function updateDomTranslations() {
     const val = sel.value;
     sel.value = val;
   });
+
+  document.querySelectorAll('#whatsnew li').forEach((li) => {
+    const orig = (li.dataset.origText ??= li.textContent.trim());
+    if (currentLang === 'en') {
+      li.textContent = orig;
+    } else {
+      const tr = t(orig);
+      li.textContent = (tr && tr !== orig) ? tr : orig;
+    }
+  });
 }

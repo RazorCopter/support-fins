@@ -1,6 +1,6 @@
-# Support Fins
+# Supporti 3D
 
-**Tip a part on edge, and Support Fins adds the breakaway support fins that make that
+**Tip a part on edge, and Supporti 3D adds the breakaway support fins that make that
 orientation printable — baked right into the STL.**
 
 Live at **[printfins.com](https://printfins.com)**. Runs entirely in your browser: nothing
@@ -24,7 +24,7 @@ The technique of designed-in supports isn't new, but until now you had to CAD it
 ## How it works
 
 1. Import an STL, 3MF, STEP or OBJ.
-2. Rotate it. You're in control — Support Fins suggests, it never decides for you.
+2. Rotate it. You're in control — Supporti 3D suggests, it never decides for you.
 3. It shows you live: overhang count, how many can take a real fin, height, bed contact.
    Point at the load direction, answer one question — _does it pull apart, or does it
    lever?_ — and it scores orientations for strength too.

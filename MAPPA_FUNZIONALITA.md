@@ -1,16 +1,16 @@
-# Mappa delle Funzionalità - Support Fins (printfins.com)
+# Mappa delle Funzionalità - Supporti 3D (printfins.com)
 
-> Documento di analisi funzionale e architetturale del progetto **Support Fins** ([RazorCopter/support-fins](https://github.com/RazorCopter/support-fins)).
+> Documento di analisi funzionale e architetturale del progetto **Supporti 3D** ([RazorCopter/support-fins](https://github.com/RazorCopter/support-fins)).
 
 ---
 
 ## 1. Visione e Concetto Chiave
 
-**Support Fins** è un motore geometrico open-source (MIT) per la generazione di **supporti strutturali a "pinna" rimovibili a strappo (breakaway fins)**, incorporati direttamente nella mesh 3D (file STL o 3MF).
+**Supporti 3D** è un motore geometrico open-source (MIT) per la generazione di **supporti strutturali a "pinna" rimovibili a strappo (breakaway fins)**, incorporati direttamente nella mesh 3D (file STL o 3MF).
 
 ### Obiettivo principale
 1. **Massimizzazione della resistenza meccanica:** La stampa di parti orientate su spigolo o in diagonale garantisce fino a ~3× la resistenza agli sforzi rispetto alla stampa in piano, poiché le linee di layer non coincidono con i piani di rottura.
-2. **Supporti integrati nella mesh ("Designed-in Supports"):** I supporti generati dai comuni slicer (griglia, organici, ad albero) creano cicatrici superficiali, sprecano materiale e dipendono dal singolo software/macchina. Con Support Fins, le pinne sono solidi chiusi incorporati nella geometria 3D: il file esportato è **slicer-agnostic e printer-agnostic**.
+2. **Supporti integrati nella mesh ("Designed-in Supports"):** I supporti generati dai comuni slicer (griglia, organici, ad albero) creano cicatrici superficiali, sprecano materiale e dipendono dal singolo software/macchina. Con Supporti 3D, le pinne sono solidi chiusi incorporati nella geometria 3D: il file esportato è **slicer-agnostic e printer-agnostic**.
 3. **Approccio "Gap & Grab" (Spaziatura e Presa):**
    - **Fin Body (Pareti verticali):** Pareti sottili distanziate di una tolleranza minima (es. 0.2 mm) dal pezzo.
    - **Tines (Denti di presa orizzontali):** Ponticelli dell'altezza di un singolo layer stampati in continuo (senza retrazioni) che fondono nel pezzo per impedire il ribaltamento e si spezzano per fatica con una semplice flessione manuale.

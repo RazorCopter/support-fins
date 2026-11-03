@@ -6,7 +6,7 @@ const DIR = 'calibration/';
 
 const GUIDE_IT = `
 <div class="guide-intro-box">
-  <p><strong>Support Fins</strong> include valori predefiniti tarati su stampe in PLA e PETG su una stampante standard. Ciascuna stampante, filamento e profilo slicer presenta caratteristiche differenti. Ogni provino di test qui descritto calibra un singolo parametro: stampalo, individua il risultato migliore e imposta quel valore nell'applicazione. Ogni elemento ha il valore impresso in rilievo, per una lettura immediata senza consultare schede esterne.</p>
+  <p><strong>Supporti 3D</strong> include valori predefiniti tarati su stampe in PLA e PETG su una stampante standard. Ciascuna stampante, filamento e profilo slicer presenta caratteristiche differenti. Ogni provino di test qui descritto calibra un singolo parametro: stampalo, individua il risultato migliore e imposta quel valore nell'applicazione. Ogni elemento ha il valore impresso in rilievo, per una lettura immediata senza consultare schede esterne.</p>
   <p class="guide-tip"><strong>Regola fondamentale:</strong> Stampa i provini con il tuo consueto profilo di slicing mantenendo i <strong>supporti dello slicer DISATTIVATI</strong>. I supporti necessari sono già incorporati all'interno dei file (e il test dell'angolo non ne richiede alcuno).</p>
 </div>
 
@@ -180,7 +180,7 @@ const GUIDE_IT = `
 
 const GUIDE_EN = `
 <div class="guide-intro-box">
-  <p><strong>Support Fins</strong> ships numbers tuned on PLA and PETG printed on one printer. Your printer, filament and slicer profile are different. Each test print below sets one setting: print it, find the best rung, and type that number into the site. Every rung is marked with its value raised on top (the angle, the gap in mm, the setting), so there's nothing to look up.</p>
+  <p><strong>Supporti 3D</strong> ships numbers tuned on PLA and PETG printed on one printer. Your printer, filament and slicer profile are different. Each test print below sets one setting: print it, find the best rung, and type that number into the site. Every rung is marked with its value raised on top (the angle, the gap in mm, the setting), so there's nothing to look up.</p>
   <p class="guide-tip"><strong>Core rule:</strong> Print them with the slicer profile you normally use, with <strong>slicer supports OFF</strong>. The supports are already in the file (and the angle test needs none).</p>
 </div>
 
@@ -383,8 +383,8 @@ export function renderGuide() {
   const isIt = currentLang === 'it';
   if (title) {
     title.textContent = isIt
-      ? 'Calibrazione di Support Fins per la tua stampante'
-      : 'Tuning Support Fins to your printer';
+      ? 'Calibrazione di Supporti 3D per la tua stampante'
+      : 'Tuning Supporti 3D to your printer';
   }
   body.innerHTML = isIt ? GUIDE_IT : GUIDE_EN;
 }
