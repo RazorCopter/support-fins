@@ -203,6 +203,7 @@ export default {
   "Clone the repository and start the dev server:": "Clona il repository e avvia il dev server:",
   "Docker image:": "Immagine Docker:",
   "Compose file:": "File Compose:",
+  "Calibration guide": "Guida alla calibrazione",
   "How to use Support Fins": "Come usare Supporti 3D",
   "How to use Supporti 3D": "Come usare Supporti 3D",
   "Tuning Support Fins to your printer": "Calibrazione di Supporti 3D per la tua stampante",
