@@ -11,7 +11,7 @@
 
 FROM nginx:stable-alpine
 
-LABEL org.opencontainers.image.title="Support Fins" \
+LABEL org.opencontainers.image.title="Supporti 3D" \
       org.opencontainers.image.description="Browser-based breakaway support-fin generator for 3D prints" \
       org.opencontainers.image.source="https://github.com/gittrahan/support-fins" \
       org.opencontainers.image.license="MIT"

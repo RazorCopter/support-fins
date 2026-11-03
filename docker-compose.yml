@@ -9,8 +9,7 @@
 
 services:
   web:
-    image: ghcr.io/gittrahan/support-fins:${SUPPORT_FINS_VERSION:-latest}
-    container_name: support-fins
+    image: supporti-3d:${SUPPORT_FINS_VERSION:-latest}
     build:
       context: .
       dockerfile: Dockerfile
