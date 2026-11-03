@@ -9,7 +9,6 @@
 
 services:
   web:
-    image: supporti-3d:${SUPPORT_FINS_VERSION:-latest}
     build:
       context: .
       dockerfile: Dockerfile
