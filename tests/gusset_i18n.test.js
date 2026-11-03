@@ -41,7 +41,7 @@ const glued = (src) => src.replace(/'\s*\+\s*'/g, '');
 
 Deno.test('gusset strings: in the source, and translated in every locale with their placeholders', async () => {
   const dicts = {};
-  for (const lang of ['de', 'nl', 'pt', 'zh', 'ar']) dicts[lang] = (await import(`../web/i18n/${lang}.js`)).default;
+  for (const lang of ['de', 'nl', 'pt', 'zh', 'ar', 'it']) dicts[lang] = (await import(`../web/i18n/${lang}.js`)).default;
   for (const [file, keys] of Object.entries(KEYS)) {
     const src = glued(await Deno.readTextFile(new URL(`../${file}`, import.meta.url)));
     for (const key of keys) {

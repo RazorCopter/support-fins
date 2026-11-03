@@ -6,7 +6,7 @@ const key = 'too close to the part’s side wall — draw the line a little furt
 Deno.test('drawn part wall side-wall refusal is translated in every locale', async () => {
   const src = await Deno.readTextFile(new URL('../web/draw.js', import.meta.url));
   assert(src.includes(key.split(' — ')[0]) && src.includes('draw the line '), 'draw.js no longer gives this reason');
-  for (const lang of ['nl', 'de', 'pt', 'zh', 'ar']) {
+  for (const lang of ['nl', 'de', 'pt', 'zh', 'ar', 'it']) {
     const { default: dict } = await import(`../web/i18n/${lang}.js`);
     assert(dict[key] && dict[key] !== key, `${lang}: missing ${key}`);
   }

@@ -19,7 +19,7 @@ Deno.test('anchor fins i18n: every new string is in the source and every locale'
     const src = await Deno.readTextFile(new URL(`../${file}`, import.meta.url));
     for (const k of keys) assert(src.includes(k), `${file} no longer says "${k}"; update the key`);
   }
-  for (const lang of ['de', 'nl', 'pt', 'zh', 'ar']) {
+  for (const lang of ['de', 'nl', 'pt', 'zh', 'ar', 'it']) {
     const { default: dict } = await import(`../web/i18n/${lang}.js`);
     for (const k of Object.values(KEYS).flat()) {
       const v = dict[k];

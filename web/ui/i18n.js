@@ -3,6 +3,7 @@ import pt from '../i18n/pt.js';
 import ar from '../i18n/ar.js';
 import nl from '../i18n/nl.js';
 import zh from '../i18n/zh.js';
+import it from '../i18n/it.js';
 
 export const SUPPORTED_LANGS = {
   en: 'English',
@@ -10,7 +11,8 @@ export const SUPPORTED_LANGS = {
   pt: 'Português',
   ar: 'العربية',
   nl: 'Dutch',
-  zh: '简体中文'
+  zh: '简体中文',
+  it: 'Italiano'
 };
 
 const STORAGE_KEY = 'support_fins_lang';
@@ -49,7 +51,7 @@ export const norm = (s) => (s || '')
 
 const normalized = (dict) => Object.fromEntries(Object.entries(dict).map(([k, v]) => [norm(k), v]));
 
-const DICTIONARIES = { de: normalized(de), pt: normalized(pt), ar: normalized(ar), nl: normalized(nl), zh: normalized(zh) };
+const DICTIONARIES = { de: normalized(de), pt: normalized(pt), ar: normalized(ar), nl: normalized(nl), zh: normalized(zh), it: normalized(it) };
 
 const pluralCache = new Map();
 function getPluralRule(lang, n) {

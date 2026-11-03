@@ -19,8 +19,7 @@ and it still comes out right. A slicer only ever outputs gcode for one machine.
 
 No slicer generates these. OrcaSlicer's whole style list is Grid / Snug / Organic / Tree
 Slim / Strong / Hybrid, and none of them modify the mesh or bond to the part on purpose.
-The technique isn't new (Slant3D has evangelized designed-in supports for years), but until
-now you had to CAD it by hand every time.
+The technique of designed-in supports isn't new, but until now you had to CAD it by hand every time.
 
 ## How it works
 
@@ -278,11 +277,6 @@ tests/       offline geometry regression suite
 Fins are separate closed solids appended to the mesh; the slicer unions them. The whole
 engine is plain mesh math with no boolean kernel, because it has to run in the browser.
 
-## Credit
-
-The fin technique is Slant3D's — they've evangelized designed-in supports for years.
-Support Fins just automates it. `docs/FIN-SPEC.md` cites their numbers directly.
-
 ## License
 
 MIT. The license covers this tool, not what you make with it — STLs you run through Support
@@ -294,8 +288,3 @@ LGPL-2.1 license files. The browser only downloads it when you go to import a fi
 
 Pointer picks on dense parts use [three-mesh-bvh](https://github.com/gkjohnson/three-mesh-bvh),
 vendored unmodified under `web/vendor/three-mesh-bvh-0.9.15/` with its MIT license.
-
----
-
-Free and open source. If it ever saves you a print, you can [buy me a coffee on
-Ko-fi](https://ko-fi.com/matthewtrahan) ☕.

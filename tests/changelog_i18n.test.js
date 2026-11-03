@@ -10,7 +10,7 @@ Deno.test("changelog chrome is translated in every locale and present in the car
   const released = data.unreleased.length ? stamp(data, nextVersion(data), '2026-10-28') : data;
   const html = cardHTML(released) + versionHTML(released);
   for (const key of keys) assert(new RegExp(`data-i18n(-title)?="${key}"`).test(html), `the card lost ${key}`);
-  for (const lang of ['nl', 'de', 'pt', 'zh', 'ar']) {
+  for (const lang of ['nl', 'de', 'pt', 'zh', 'ar', 'it']) {
     const { default: dict } = await import(`../web/i18n/${lang}.js`);
     for (const key of keys) {
       const same = lang === 'de' && key === 'Version';   // German spells it the same

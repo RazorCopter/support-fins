@@ -12,7 +12,7 @@ const keys = [
 ];
 
 Deno.test('small-hole messages cover every locale, plural category and placeholder', async () => {
-  for (const lang of ['nl', 'de', 'pt', 'zh', 'ar']) {
+  for (const lang of ['nl', 'de', 'pt', 'zh', 'ar', 'it']) {
     const { default: dict } = await import(`../web/i18n/${lang}.js`);
     for (const key of keys) {
       const entry = dict[key];

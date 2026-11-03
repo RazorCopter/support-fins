@@ -138,9 +138,10 @@
             data-i18n-title="Test prints that tune the settings to your printer and filament." data-i18n="Calibrate ▾" title="Test prints that tune the settings to your printer and filament.">Calibrate&nbsp;▾</button>
     <div class="menu plugins-panel" id="calibrate-menu" role="dialog" aria-label="Calibration prints" hidden>
       <p class="calibrate-intro" data-i18n="Print each with your usual profile and slicer supports off; the supports are in the file. Each sets one setting.">Print each with your usual profile and slicer supports off; the supports are in the file. Each sets one setting.</p>
+      <button type="button" class="btn guide-trigger-btn" id="calibrate-open-guide"><span aria-hidden="true">📖</span>&nbsp;<span data-i18n="Calibration guide">Calibration guide</span></button>
       <div id="calibrate-list"></div>
       <p class="plugins-foot"><span id="calibrate-profile"></span>
-        <a id="calibrate-guide" target="_blank" rel="noopener" data-i18n="Full guide">Full guide</a></p>
+        <a id="calibrate-guide" href="#" role="button" data-i18n="Full guide">Full guide</a></p>
     </div>
   </span>
   <!-- Plugin downloads (web/ui/plugins.js): every slicer / CAD plugin from the
@@ -169,14 +170,13 @@
       <button role="menuitem" id="lang-opt-pt">Português</button>
       <button role="menuitem" id="lang-opt-ar">العربية</button>
       <button role="menuitem" id="lang-opt-nl">Nederlands</button>
+      <button role="menuitem" id="lang-opt-it">Italiano</button>
     </div>
   </span>
   <a class="btn gh more" href="https://github.com/gittrahan/support-fins" target="_blank" rel="noopener"
      data-i18n-title title="Source code on GitHub. Runs entirely in your browser; no file ever leaves your machine."
      aria-label="Support Fins on GitHub"><svg viewBox="0 0 16 16" width="16" height="16"
      aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="lbl">&nbsp;GitHub</span></a>
-  <a class="btn kofi more" href="https://ko-fi.com/matthewtrahan" target="_blank" rel="noopener" aria-label="Ko-fi"
-     data-i18n-title title="Support Fins is free and open source — buy me a coffee on Ko-fi.">☕<span class="lbl">&nbsp;Ko-fi</span></a>
   <!-- Error badge: hidden until the page hits an error (the inline script in <head>
        collects them), so a "nothing works" report -- a phone browser blocking a
        script (#237) -- comes with the message in a screenshot. Plain markup, not
@@ -784,13 +784,12 @@
           <li>Any nozzle from 0.2 to 2.0 mm, layers up to 0.6 mm, and thicker walls</li>
           <li>Resin: pins that snap at the surface and feet a scraper can get under</li>
           <li>Interface material for toolchanger printers</li>
-          <li>Works on phones, and in German, Dutch, Portuguese, Chinese and Arabic</li>
+          <li>Works on phones, and in German, Dutch, Portuguese, Chinese, Arabic and Italian</li>
         </ul>
       </div>
       <a href="https://github.com/gittrahan/support-fins/releases" target="_blank" rel="noopener" data-i18n="See all releases">See all releases</a>
     </section>
     <!-- END whatsnew -->
-    <p class="kofi-line"><span data-i18n="Free and open source. If it ever saves you a print,">Free and open source. If it ever saves you a print,</span> <a class="kofi" href="https://ko-fi.com/matthewtrahan" target="_blank" rel="noopener"><span data-i18n="buy me a coffee ☕">buy me a coffee ☕</span></a>.</p>
   </div>
   <!-- Once a part has been loaded, an empty plate (Remove model) and a drag show
        just this over the bare plate: the intro is for a first visit (#drop.compact). -->
@@ -816,6 +815,20 @@
         <button class="btn" id="picker-cancel" data-i18n="Cancel">Cancel</button>
         <button class="btn primary" id="picker-load" data-i18n="Load">Load</button>
       </span>
+    </div>
+  </div>
+</div>
+
+<!-- Calibration Guide Modal -->
+<div id="calibrate-guide-modal" class="modal-overlay" hidden>
+  <div class="modal-panel guide-panel" role="dialog" aria-modal="true" aria-labelledby="guide-title">
+    <div class="modal-header">
+      <h2 id="guide-title" data-i18n="Tuning Support Fins to your printer">Tuning Support Fins to your printer</h2>
+      <button class="btn icon-btn" id="guide-close" aria-label="Close" title="Close">✕</button>
+    </div>
+    <div class="guide-body" id="guide-content"></div>
+    <div class="modal-foot">
+      <button class="btn primary" id="guide-ok" data-i18n="Close">Close</button>
     </div>
   </div>
 </div>

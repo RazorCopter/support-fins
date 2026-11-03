@@ -9,9 +9,9 @@
 // What to read off each print is docs/CALIBRATION.md; the rows give the short form.
 import { el } from './dom.js';
 import { t } from './i18n.js';
+import { openGuideModal } from './guide.js';
 
 const DIR = 'calibration/';
-const GUIDE = 'https://github.com/gittrahan/support-fins/blob/main/docs/CALIBRATION.md';
 
 // Menu order = print order: angle first, since it decides which faces get support.
 export const COUPONS = [
@@ -141,7 +141,14 @@ function setOpen(open) {
   }
 }
 
-el('calibrate-guide').href = GUIDE;
+function openGuide(e) {
+  if (e) e.preventDefault();
+  setOpen(false);
+  openGuideModal();
+}
+
+el('calibrate-guide')?.addEventListener('click', openGuide);
+el('calibrate-open-guide')?.addEventListener('click', openGuide);
 render();
 
 btn.addEventListener('click', () => setOpen(panel.hidden));

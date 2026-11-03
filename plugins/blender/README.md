@@ -55,12 +55,7 @@ in it (CI does this for 4.2 LTS and 5.2). On a Mac, run the smoke test against y
 Blender with `BLENDER_USER_CONFIG/SCRIPTS/DATAFILES/EXTENSIONS` pointed at a scratch
 folder, so the test install never touches your setup.
 
-## Licence and credit
+## Licence
 
 The add-on (this folder) is GPL-3.0-or-later, as Blender requires of add-ons; the
 engine bundled into it (`web/*.js`) stays MIT (`LICENSE-engine` in the zip).
-
-The Blender side started as [RemusTL](https://github.com/RemusTL)'s extension in
-[#145](https://github.com/gittrahan/support-fins/pull/145): the two-click Draw wall and
-Lay face flat tool, the 3MF assembly export and the headless-Blender CI smoke test are
-his, ported onto the shared engine path.

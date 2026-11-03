@@ -319,5 +319,10 @@ if (langBtn && langMenu) {
     langMenu.hidden = true;
     langBtn.setAttribute('aria-expanded', 'false');
   });
+  document.getElementById('lang-opt-it')?.addEventListener('click', () => {
+    setLanguage('it');
+    langMenu.hidden = true;
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
 }
 updateDomTranslations();

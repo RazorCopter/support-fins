@@ -8,7 +8,7 @@ const KEY = 'the face curves over past 45° near the plate there, so a brace can
 Deno.test('sway curved i18n: the rollover refusal is in the source and every locale', async () => {
   const src = await Deno.readTextFile(new URL('../web/sway.js', import.meta.url));
   assert(src.includes(KEY), 'web/sway.js no longer says this; update the key');
-  for (const lang of ['de', 'nl', 'pt', 'zh', 'ar']) {
+  for (const lang of ['de', 'nl', 'pt', 'zh', 'ar', 'it']) {
     const { default: dict } = await import(`../web/i18n/${lang}.js`);
     assert(typeof dict[KEY] === 'string' && dict[KEY].length > 0, `${lang} is missing the rollover refusal`);
     assert(dict[KEY].includes('45°'), `${lang} dropped the angle`);
